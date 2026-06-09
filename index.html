@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emoji RNG Game</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #111;
+      color: white;
+      margin-top: 50px;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    #result {
+      font-size: 60px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎲 Emoji RNG Game</h1>
+<button onclick="roll()">Roll Emoji</button>
+
+<div id="result">❓</div>
+
+<script>
+function roll() {
+  let r = Math.floor(Math.random() * 1000) + 1;
+  let emoji = "";
+
+  if (r <= 700) emoji = "🙂";
+  else if (r <= 900) emoji = "🐶";
+  else if (r <= 970) emoji = "🐺";
+  else if (r <= 995) emoji = "🦄";
+  else if (r <= 999) emoji = "🌌";
+  else emoji = "☠️";
+
+  document.getElementById("result").innerText = emoji;
+}
+</script>
+
+</body>
+</html>
